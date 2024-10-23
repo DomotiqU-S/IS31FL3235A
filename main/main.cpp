@@ -3,6 +3,10 @@
 #include <esp_err.h>
 #include "IS31FL3235A.hpp"
 
+// include freeRTOS headers
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 IS31FL3235A ledDriver(GPIO_NUM_11, GPIO_NUM_10, IS31FL3235A_ADDR);
 
 extern "C" void app_main(void)

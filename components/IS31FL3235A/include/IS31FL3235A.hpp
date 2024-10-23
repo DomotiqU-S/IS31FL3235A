@@ -2,6 +2,7 @@
 #define IS31FL3235A_H
 
 #include "I2CController.hpp"
+#include "BusController.hpp"
 #include "driver/gpio.h"
 #include <stdio.h>
 #include <esp_log.h>
@@ -71,6 +72,8 @@ private:
     I2CController *m_bus;
 
     uint8_t m_address = 0;
+
+    i2c_master_dev_handle_t m_device;
 public:
     /**
      * @brief Construct a new IS31FL3235A object

@@ -2,8 +2,11 @@
 
 IS31FL3235A::IS31FL3235A(gpio_num_t sda_pin, gpio_num_t scl_pin, uint8_t address) {
     m_bus = I2CController::getInstance();
-    m_bus->setSCLPin(scl_pin);
-    m_bus->setSDAPin(sda_pin);
+    m_bus->changePins(sda_pin, scl_pin);
+
+    // I2c device variable
+    m_device = 0;
+
     m_address = address;
 }
 
