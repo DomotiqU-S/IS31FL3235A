@@ -9,13 +9,14 @@ extern "C" void app_main(void)
 {
     ledDriver.begin();
 
-ledDriver.sendConfig();
+    ledDriver.reset();
+    ledDriver.sendConfig();
 
     while(1) {
-        ledDriver.setPWM(8, 100);
-        ledDriver.setPWM(9, 100);
-        ledDriver.setLEDControl(8, true);
-        ledDriver.setLEDControl(9, true);
+        ledDriver.setPWM(6, 100);
+        ledDriver.setPWM(7, 100);
+        ledDriver.setLEDControl(6, true);
+        ledDriver.setLEDControl(7, true);
         ledDriver.updatePWM();
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
